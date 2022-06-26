@@ -9,7 +9,8 @@
     "require": {
         "phpaes/phpaes": "^3.1",
         "ext-curl": "*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "phpoffice/phpspreadsheet": "^1.23"
     },
     "require-dev": {
         "symfony/var-dumper": "^5.2"
