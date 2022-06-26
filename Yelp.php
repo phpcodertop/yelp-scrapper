@@ -18,6 +18,7 @@ class Yelp {
     private $searchWord;
     private $location;
     private $start = 0;
+    private $maxResults;
     private $data = array();
     private $sheetData = array();
 
@@ -32,15 +33,16 @@ class Yelp {
      * @param string $location
      */
     public function __construct(string $searchWord,
-    string $location)
+    string $location, int $maxResults = 10)
     {
         $this->searchWord = $searchWord;
         $this->location = $location;
+        $this->maxResults = $maxResults;
     }
 
-    public  function scrape($maxResults = 10): array
+    public  function scrape(): array
     {
-        $steps = ceil($maxResults / 10);
+        $steps = ceil($this->maxResults / 10);
 
         for ($i = 0; $i < $steps; $i++)
         {
